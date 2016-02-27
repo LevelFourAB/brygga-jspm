@@ -37,9 +37,9 @@ Link to any bundle in your HTML via `/js/name-of-bundle.js`, during development 
 src/ - the source files
   js/ - JS files
     main.js - your entry point, configure this via brygga.config.js.bundles
-  jspm_packages - packages installed via JSPM, you can add this folder to .gitignore
-  jspm.browser.js - configuration used in the browser
-  jspm.config.js - shared JSPM configuration
+jspm_packages - packages installed via JSPM, you can add this folder to .gitignore
+jspm.browser.js - configuration used in the browser
+jspm.config.js - shared JSPM configuration
 ```
 
 # Available tasks
