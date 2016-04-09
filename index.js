@@ -29,16 +29,23 @@ brygga.utils.task('js', function(cb) {
 		}
 
 		var file = brygga.utils.destFile('js', name);
-		jspm.build(opts.expression, file, {
-			minify: true,
-			sourceMaps: true,
-			globalName: opts.globalName,
-			production: true
-		}).then(function() {
-			if(--count <= 0) cb();
-		}, function(err) {
-			cb(err);
-		});
+		var builder = new jspm.Builder();
+		builder
+			.buildStatic(opts.expression, file, {
+				minify: true,
+				sourceMaps: true,
+				globalName: opts.globalName,
+				production: true,
+				browser: true,
+				buildConfig: true,
+				globalName: 'window',
+				format: 'umd'
+			})
+			.then(function() {
+				if(--count <= 0) cb();
+			}, function(err) {
+				cb(err);
+			});
 	});
 });
 
