@@ -1,6 +1,6 @@
 {
   "name": "brygga-jspm",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "JavaScript support via JSPM for Brygga",
   "author": "Andreas Holstenson <a@holstenson.se>",
   "license": "MIT",
