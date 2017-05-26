@@ -25,7 +25,7 @@ brygga.utils.task('js', function(cb) {
 		}
 
 		if(! opts.globalName) {
-			opts.globalName = path.basename(opts);
+			opts.globalName = path.basename(opts.expression);
 		}
 
 		var file = brygga.utils.destFile('js', name);
@@ -94,6 +94,7 @@ brygga.config.serve.routes['/js'] = function(req, res, next) {
 	res.statusCode = 200;
 	res.setHeader('Content-Type', 'application/json');
 	var filesToSend = [
+		'jspm_packages/system-polyfills.js',
 		'jspm_packages/system.src.js',
 		'jspm.browser.js',
 		'jspm.config.js'
